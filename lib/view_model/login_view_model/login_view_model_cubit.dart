@@ -7,5 +7,10 @@ class LoginCubit extends Cubit<LoginStateS> {
   LoginCubit get(context)=> BlocProvider.of(context);
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  bool isVisible = true;
 
+  void changeVisibility() {
+    isVisible = !isVisible;
+    emit(ChangeVisibilityState());
+  }
 }

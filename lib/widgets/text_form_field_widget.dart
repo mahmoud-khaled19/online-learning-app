@@ -11,6 +11,7 @@ class DefaultTextFormField extends StatelessWidget {
   final bool isSecure;
   final TextInputType textType;
   final String? hint;
+  final TextInputAction? keyboardAction;
 
   const DefaultTextFormField({
     super.key,
@@ -23,6 +24,7 @@ class DefaultTextFormField extends StatelessWidget {
     this.suffixFunction,
     this.isSecure = false,
     this.textType = TextInputType.emailAddress,
+    this.keyboardAction = TextInputAction.next,
   });
 
   @override
@@ -33,13 +35,15 @@ class DefaultTextFormField extends StatelessWidget {
           height: 12,
         ),
         TextFormField(
+        textInputAction: keyboardAction,
           onTapOutside: (event) {
             FocusManager.instance.primaryFocus?.unfocus();
           },
           onTap: onTap,
           onEditingComplete: onSubmitted,
-          style: Theme.of(context).textTheme.titleSmall,
+          style: Theme.of(context).textTheme.titleMedium,
           obscureText: isSecure,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           keyboardType: textType,
           controller: controller,
           validator: validate,
@@ -52,8 +56,7 @@ class DefaultTextFormField extends StatelessWidget {
             hintText: hint,
             hintStyle: Theme.of(context)
                 .textTheme
-                .titleSmall
-                ?.copyWith(color: Colors.grey),
+                .titleSmall,
             border: OutlineInputBorder(
                 borderSide: BorderSide(color: Theme.of(context).splashColor),
                 borderRadius: BorderRadius.circular(10)),

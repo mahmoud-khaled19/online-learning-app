@@ -55,14 +55,18 @@ class LoginScreen extends StatelessWidget {
                     },
                   ),
                   DefaultTextFormField(
+                    keyboardAction: TextInputAction.done,
                     controller: cubit.passwordController,
                     hint: AppStrings.passwordHint,
                     validate: (String? value) {
                       return GlobalMethods.validate(
-                          AppStrings.emailValidateMessage, value);
+                          AppStrings.passwordValidateMessage, value);
                     },
-                    suffixIcon: Icons.visibility_off,
-                    isSecure: true,
+                    suffixFunction: () {
+                      cubit.changeVisibility();
+                    },
+                    suffixIcon:cubit.isVisible? Icons.visibility_off:Icons.visibility ,
+                    isSecure: cubit.isVisible,
                   ),
                   SizedBox(height: AppSize.s10),
                   DefaultCustomText(

@@ -58,21 +58,22 @@ class RegisterScreen extends StatelessWidget {
                   ),
                   DefaultTextFormField(
                     textType: TextInputType.phone,
-                    controller: cubit.passwordController,
+                    controller: cubit.phoneController,
                     hint: AppStrings.phoneHint,
                     validate: (String? value) {
                       return GlobalMethods.validate(
-                          AppStrings.emailValidateMessage, value);
+                          AppStrings.phoneValidateMessage, value);
                     },
                   ),
                   DefaultTextFormField(
+                    keyboardAction: TextInputAction.done,
                     controller: cubit.passwordController,
                     hint: AppStrings.passwordHint,
                     validate: (String? value) {
                       return GlobalMethods.validate(
-                          AppStrings.emailValidateMessage, value);
+                          AppStrings.passwordValidateMessage, value);
                     },
-                    suffixIcon: Icons.visibility_off,
+                    suffixIcon:cubit.isVisible? Icons.visibility_off:Icons.visibility,
                     isSecure: true,
                   ),
                   SizedBox(height: AppSize.s8),

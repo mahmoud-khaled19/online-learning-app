@@ -8,13 +8,13 @@ class RegisterCubit extends Cubit<RegisterStates> {
   RegisterCubit get(context) => BlocProvider.of(context);
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
   bool isVisible = true;
   bool isAgreeTerms = false;
 
   void changeVisibility() {
     isVisible = !isVisible;
-
-    /// emit(ChangeVisibilityState());
+    emit(ChangeVisibilityState());
   }
 
   void rememberUserInfo(bool newValue) {
