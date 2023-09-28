@@ -29,7 +29,6 @@ class AppStrings {
 
   /// hints
   static const String phoneHint = 'Enter your phone number';
-  static const String dateHint = 'sep 4, 1997';
   static const String nameHint = 'Enter your name ';
   static const String emailHint = 'Enter your Email ';
   static const String passwordHint = 'Enter your password';

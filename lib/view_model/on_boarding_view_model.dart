@@ -27,4 +27,5 @@ abstract class OnBoardingViewModel {
   ];
   static late AnimationController animationController;
   static late Animation<TextStyle> animation;
+  static late Animation<double> animationButton;
 }

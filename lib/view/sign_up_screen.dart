@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:online_learning_app/generated/assets.dart';
 import 'package:online_learning_app/utils/global_methods.dart';
 import 'package:online_learning_app/utils/style_manager.dart';
 import 'package:online_learning_app/utils/values_manager.dart';
+import 'package:online_learning_app/view/phone_otp_screen.dart';
 import 'package:online_learning_app/widgets/elevated_button_widget.dart';
 import 'package:online_learning_app/widgets/text_form_field_widget.dart';
 import '../utils/strings_manager.dart';
@@ -42,10 +44,10 @@ class RegisterScreen extends StatelessWidget {
                     alignment: Alignment.centerLeft,
                     fontSize: AppSize.s10,
                   ),
-                  SizedBox(height: AppSize.s40),
+                  SizedBox(height: AppSize.s10),
                   Image.asset(
                     Assets.imagesSecure,
-                    height: hSize * 0.25,
+                    height: hSize * 0.2,
                     fit: BoxFit.cover,
                   ),
                   DefaultTextFormField(
@@ -57,15 +59,6 @@ class RegisterScreen extends StatelessWidget {
                     },
                   ),
                   DefaultTextFormField(
-                    textType: TextInputType.phone,
-                    controller: cubit.phoneController,
-                    hint: AppStrings.phoneHint,
-                    validate: (String? value) {
-                      return GlobalMethods.validate(
-                          AppStrings.phoneValidateMessage, value);
-                    },
-                  ),
-                  DefaultTextFormField(
                     keyboardAction: TextInputAction.done,
                     controller: cubit.passwordController,
                     hint: AppStrings.passwordHint,
@@ -73,10 +66,34 @@ class RegisterScreen extends StatelessWidget {
                       return GlobalMethods.validate(
                           AppStrings.passwordValidateMessage, value);
                     },
-                    suffixIcon:cubit.isVisible? Icons.visibility_off:Icons.visibility,
+                    suffixIcon: cubit.isVisible
+                        ? Icons.visibility_off
+                        : Icons.visibility,
                     isSecure: true,
                   ),
-                  SizedBox(height: AppSize.s8),
+                  DefaultTextFormField(
+                    controller: cubit.nameController,
+                    hint: AppStrings.nameHint,
+                    validate: (String? value) {
+                      return GlobalMethods.validate(
+                          AppStrings.emailValidateMessage, value);
+                    },
+                  ),
+                  SizedBox(height: AppSize.s12),
+                  IntlPhoneField(
+                    decoration: InputDecoration(
+                      labelText: AppStrings.phoneHint,
+                      labelStyle: Theme.of(context).textTheme.titleSmall,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    initialCountryCode: 'EG',
+                    onChanged: (phone) {
+                      phone.completeNumber;
+                      cubit.phoneController.text = phone.completeNumber;
+                    },
+                  ),
                   Row(
                     children: [
                       DefaultCheckBoxWidget(
@@ -92,10 +109,17 @@ class RegisterScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: AppSize.s14),
                   DefaultButton(
                     text: AppStrings.register,
-                    function: () {},
+                    function: () {
+                      GlobalMethods.navigateTo(
+                          context,
+                          PhoneOtpScreen(
+                            phoneNumber: cubit.phoneController.text.trim(),
+                            email: cubit.emailController.text.trim(),
+                            name: cubit.nameController.text.trim(),
+                          ));
+                    },
                     context: context,
                     width: wSize * 0.7,
                   ),

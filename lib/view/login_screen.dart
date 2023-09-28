@@ -17,7 +17,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<LoginCubit, LoginStateS>(
+    return BlocBuilder<LoginCubit, LoginStates>(
       builder: (context, state) {
         LoginCubit cubit = BlocProvider.of<LoginCubit>(context);
         double hSize = MediaQuery.of(context).size.height;
@@ -40,10 +40,10 @@ class LoginScreen extends StatelessWidget {
                     fontSize: AppSize.s10,
                     alignment: Alignment.centerLeft,
                   ),
-                  SizedBox(height: AppSize.s20),
+                  SizedBox(height: AppSize.s10),
                   Image.asset(
                     Assets.imagesLogin,
-                    height: hSize * 0.25,
+                    height: hSize * 0.2,
                     fit: BoxFit.cover,
                   ),
                   DefaultTextFormField(

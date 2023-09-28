@@ -8,11 +8,12 @@ ThemeData getLightApplicationTheme() {
   return ThemeData(
       cardColor: ColorsManager.lightCardColor,
       appBarTheme: AppBarTheme(
+        centerTitle: true,
           titleTextStyle: GoogleFonts.poppins(
               color: Colors.black,
-              fontSize: AppSize.s16,
+              fontSize: AppSize.s14,
               letterSpacing: 0.6,
-              fontWeight: FontWeightManager.bold),
+              fontWeight: FontWeightManager.medium),
           backgroundColor: ColorsManager.lightScaffoldColor,
           elevation: 0,
           iconTheme: IconThemeData(color: Colors.black, size: AppSize.s18)),

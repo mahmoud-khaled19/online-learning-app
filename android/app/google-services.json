@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "891202497994",
+    "project_id": "online-learning-app-13edf",
+    "storage_bucket": "online-learning-app-13edf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891202497994:android:b35fdbb5129eead2ad3333",
+        "android_client_info": {
+          "package_name": "com.example.online_learning_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfe8_13P1vRq-RzS-N1ZGU5YGE789Lpa0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

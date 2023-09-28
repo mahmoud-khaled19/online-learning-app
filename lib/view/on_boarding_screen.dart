@@ -34,6 +34,8 @@ class _OnBoardingViewState extends State<OnBoardingView>
     ).animate(CurvedAnimation(
         parent: OnBoardingViewModel.animationController, curve: Curves.easeIn));
     super.initState();
+    OnBoardingViewModel.animationButton = CurvedAnimation(
+        parent: OnBoardingViewModel.animationController, curve: Curves.easeIn);
   }
 
   @override
