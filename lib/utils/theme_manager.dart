@@ -6,9 +6,13 @@ import 'colors_manager.dart';
 
 ThemeData getLightApplicationTheme() {
   return ThemeData(
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+        backgroundColor: ColorsManager.lightCardColor,
+        elevation: 2,
+      ),
       cardColor: ColorsManager.lightCardColor,
       appBarTheme: AppBarTheme(
-        centerTitle: true,
+          centerTitle: true,
           titleTextStyle: GoogleFonts.poppins(
               color: Colors.black,
               fontSize: AppSize.s14,
@@ -21,15 +25,12 @@ ThemeData getLightApplicationTheme() {
         backgroundColor: ColorsManager.lightScaffoldColor,
         type: BottomNavigationBarType.fixed,
         elevation: 0,
-        selectedIconTheme: IconThemeData(
-          color: ColorsManager.lightSecondColor,
-          size: 30,
-        ),
+        selectedItemColor: ColorsManager.lightSecondColor,
         unselectedIconTheme: const IconThemeData(
           color: Colors.grey,
         ),
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
       ),
       iconTheme: IconThemeData(
           color: ColorsManager.lightSecondColor, size: AppSize.s30),
@@ -52,6 +53,11 @@ ThemeData getLightApplicationTheme() {
 
 ThemeData getDarkApplicationTheme() {
   return ThemeData(
+      cardColor: ColorsManager.darkCardColor,
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+        backgroundColor: ColorsManager.darkCardColor,
+        elevation: 2,
+      ),
       appBarTheme: AppBarTheme(
           titleTextStyle: GoogleFonts.poppins(
               color: Colors.white,
@@ -63,12 +69,9 @@ ThemeData getDarkApplicationTheme() {
           iconTheme: IconThemeData(color: Colors.white, size: AppSize.s18)),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         backgroundColor: ColorsManager.lightScaffoldColor,
-        type: BottomNavigationBarType.fixed,
+        type: BottomNavigationBarType.shifting,
         elevation: 0,
-        selectedIconTheme: IconThemeData(
-          color: ColorsManager.lightSecondColor,
-          size: 30,
-        ),
+        selectedItemColor: ColorsManager.lightSecondColor,
         unselectedIconTheme: const IconThemeData(
           color: Colors.grey,
         ),

@@ -36,6 +36,11 @@ class PhoneOtpScreen extends StatelessWidget {
               height: AppSize.s40,
             ),
             OTPTextField(
+              otpFieldStyle: OtpFieldStyle(
+                backgroundColor: Theme.of(context).cardColor,
+                borderColor: Theme.of(context).cardColor,
+                enabledBorderColor: Theme.of(context).splashColor,
+              ),
               length: 5,
               width: MediaQuery.sizeOf(context).width,
               fieldWidth: 40,

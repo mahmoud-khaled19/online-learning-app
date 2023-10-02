@@ -5,7 +5,7 @@ import '../model/boarding_list_model.dart';
 abstract class OnBoardingViewModel {
   static var boardingController = PageController();
   static bool isLast = false;
-  static List<BoardingList> modelList = [
+  static List<BoardingList> boardingList = [
     BoardingList(
       'Udemy free courses',
       'Free courses for you to',

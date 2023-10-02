@@ -2,14 +2,19 @@ class AppStrings {
   static const String lightMode = 'Light Mode';
   static const String appTitle = 'Online Learning App';
   static const String forgetPassword = 'Forget Password ?';
-  static const String verifyMessage1 = 'Enter your Email for Verification Process,';
-  static const String verifyMessage2 = 'you will receive a Link to set Password';
+  static const String verifyMessage1 =
+      'Enter your Email for Verification Process,';
+  static const String verifyMessage2 =
+      'you will receive a Link to set Password';
   static const String search = 'Search';
-  static const String favourites = 'Favourites';
-  static const String personalInfo = 'Personal Info';
+  static const String home = 'Home';
+  static const String chat = 'Message';
+  static const String account = 'Account';
+  static const String course = 'Course';
   static const String login = 'Login';
   static const String register = 'Sign up';
-  static const String registerScreenMessage = 'Enter your details below & free sign up';
+  static const String registerScreenMessage =
+      'Enter your details below & free sign up';
   static const String loginScreenMessage = 'More you Study More You Achieve';
   static const String signOut = 'Sign Out';
   static const String resetPassword = 'Reset';
@@ -32,6 +37,7 @@ class AppStrings {
   static const String nameHint = 'Enter your name ';
   static const String emailHint = 'Enter your Email ';
   static const String passwordHint = 'Enter your password';
+
   /// errors
   static const String errorMessage = 'Oops ! Error Happened ';
   static const String error = 'Error';
@@ -40,11 +46,7 @@ class AppStrings {
   static const String userNotFound = 'ERROR USER NOT FOUND';
   static const String wrongPassword = 'ERROR WRONG PASSWORD';
   static const String emailAlreadyInUse = 'ERROR EMAIL ALREADY IN USE';
-
   static const String agreeTerms = 'agree with our terms';
-  static const String myProfile = 'My Profile';
-  static const String language = 'Language';
-  static const String points = 'My Points';
   static const String contactUs = 'Contact Us';
   static const String logOut = 'Log Out';
   static const String callUs = 'Call Us';

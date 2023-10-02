@@ -78,7 +78,7 @@ class _OnBoardingViewState extends State<OnBoardingView>
                       children: [
                         Image(
                           image: AssetImage(
-                            OnBoardingViewModel.modelList[index].image,
+                            OnBoardingViewModel.boardingList[index].image,
                           ),
                           fit: BoxFit.cover,
                         ),
@@ -86,7 +86,7 @@ class _OnBoardingViewState extends State<OnBoardingView>
                           height: AppSize.s30,
                         ),
                         DefaultCustomText(
-                          text: OnBoardingViewModel.modelList[index].title,
+                          text: OnBoardingViewModel.boardingList[index].title,
                           fontSize: AppSize.s20,
                           fontWeight: FontWeight.bold,
                         ),
@@ -94,7 +94,7 @@ class _OnBoardingViewState extends State<OnBoardingView>
                           height: AppSize.s8,
                         ),
                         DefaultCustomText(
-                          text: OnBoardingViewModel.modelList[index].body1,
+                          text: OnBoardingViewModel.boardingList[index].body1,
                           color: Colors.grey,
                           fontWeight: FontWeight.bold,
                         ),
@@ -102,7 +102,7 @@ class _OnBoardingViewState extends State<OnBoardingView>
                           height: AppSize.s8,
                         ),
                         DefaultCustomText(
-                          text: OnBoardingViewModel.modelList[index].body2,
+                          text: OnBoardingViewModel.boardingList[index].body2,
                           color: Colors.grey,
                           fontWeight: FontWeight.bold,
                         ),
@@ -110,7 +110,7 @@ class _OnBoardingViewState extends State<OnBoardingView>
                     );
                   },
                   onPageChanged: (value) {
-                    if (value == OnBoardingViewModel.modelList.length - 1) {
+                    if (value == OnBoardingViewModel.boardingList.length - 1) {
                       setState(() {
                         OnBoardingViewModel.isLast = true;
                       });
@@ -120,7 +120,7 @@ class _OnBoardingViewState extends State<OnBoardingView>
                       });
                     }
                   },
-                  itemCount: OnBoardingViewModel.modelList.length,
+                  itemCount: OnBoardingViewModel.boardingList.length,
                 ),
               ),
               SmoothPageIndicator(

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:online_learning_app/utils/style_manager.dart';
 import 'package:online_learning_app/utils/values_manager.dart';
+import 'package:online_learning_app/view/home_screens/home_layout.dart';
 import 'package:online_learning_app/widgets/default_custom_text.dart';
 import 'package:online_learning_app/widgets/elevated_button_widget.dart';
+
+import '../utils/global_methods.dart';
 
 class VerifySuccessScreen extends StatelessWidget {
   const VerifySuccessScreen({Key? key}) : super(key: key);
@@ -42,7 +45,9 @@ class VerifySuccessScreen extends StatelessWidget {
             SizedBox(height: AppSize.s20),
             DefaultButton(
               text: 'Done',
-              function: () {},
+              function: () {
+                GlobalMethods.navigateAndFinish(context, const HomeLayout());
+              },
               context: context,
               width: AppSize.s250,
             )
